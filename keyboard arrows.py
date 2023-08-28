@@ -24,3 +24,4 @@ while True:
                 y1 += 10
                 print("Down arrow key is pressed")
     pygame.display.update()
+

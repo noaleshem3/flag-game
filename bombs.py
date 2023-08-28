@@ -26,3 +26,4 @@ def rand_bombs():
 
 
 rand_bombs()
+
