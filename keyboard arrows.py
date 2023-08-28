@@ -13,15 +13,20 @@ while True:
         if i.type == pygame.KEYDOWN:
             if i.key == pygame.K_LEFT:
                 x1 -= 10
-                print("Left arrow key is pressed")
+                print('left')
             if i.key == pygame.K_RIGHT:
                 x1 += 10
-                print("Right arrow key is pressed")
+                print('right')
             if i.key == pygame.K_UP:
                 y1 -= 10
-                print("Up arrow key is pressed")
+                print("up")
             if i.key == pygame.K_DOWN:
                 y1 += 10
-                print("Down arrow key is pressed")
+                print('down')
+            if i.key == pygame.K_RETURN:
+                pygame.quit()
+                exit()
     pygame.display.update()
+
+
 

@@ -14,3 +14,13 @@ def add_flag(matrix):
             matrix[i][j] = 'flag'
     return matrix
 
+
+def add_grass(matrix):
+    list_of_grass = []
+    for row in matrix:
+        for col in row:
+            if col == 'empty':
+                col = 'grass'
+                index_grass = [matrix[row], col]
+                list_of_grass.append(index_grass)
+    return tuple(list_of_grass)
