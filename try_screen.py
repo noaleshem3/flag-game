@@ -22,6 +22,12 @@ done = False
 
 clock = pygame.time.Clock()
 
+
+def add_flag1():
+    flag_image = pygame.image.load(os.path.join('bin', 'flag.png'))
+    screen.blit(flag_image, (1011, 496))
+
+
 while not done:
     for event in pygame.event.get():  # User did something
         if event.type == pygame.QUIT:  # If user clicked close
@@ -48,20 +54,19 @@ while not done:
                 color = consts.BLACK
             pygame.draw.rect(screen,
                              color,
-                             [(consts.MARGIN + consts.WIDTH) * column + consts.MARGIN,
-                              (consts.MARGIN + consts.HEIGHT) * row + consts.MARGIN,
+                             [(
+                                          consts.MARGIN + consts.WIDTH) * column + consts.MARGIN,
+                              (
+                                          consts.MARGIN + consts.HEIGHT) * row + consts.MARGIN,
                               consts.WIDTH,
                               consts.HEIGHT])
 
     # Limit to 60 frames per second
     clock.tick(60)
-
+    add_flag1()
     # Go ahead and update the screen with what we've drawn.
     pygame.display.flip()
 
 # Be IDLE friendly. If you forget this line, the program will 'hang'
 # on exit.
 pygame.quit()
-
-flag_image = pygame.image.load(os.path.join('bin', 'flag.png'))
-screen.blit(flag_image, (1042, 492))
