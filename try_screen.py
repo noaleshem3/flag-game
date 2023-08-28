@@ -29,6 +29,7 @@ def add_flag1():
     screen.blit(flag, (968, 464))
 
 
+
 while not done:
     for event in pygame.event.get():  # User did something
         if event.type == pygame.QUIT:  # If user clicked close
