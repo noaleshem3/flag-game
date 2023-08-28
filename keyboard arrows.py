@@ -1,6 +1,5 @@
 import pygame
 
-
 pygame.init()
 screen = pygame.display.set_mode((500, 450))
 x1, y1 = 300, 350
@@ -25,3 +24,4 @@ while True:
                 y1 += 10
                 print("Down arrow key is pressed")
     pygame.display.update()
+
