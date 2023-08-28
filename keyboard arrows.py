@@ -1,5 +1,6 @@
-
 import pygame
+
+
 pygame.init()
 screen = pygame.display.set_mode((500, 450))
 x1, y1 = 300, 350
