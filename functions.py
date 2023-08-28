@@ -1,6 +1,7 @@
 import consts
 import random
 
+
 def creating_matrix():
     matrix = []
     for hours in range(25):
@@ -27,6 +28,6 @@ def add_grass(matrix):
         if matrix[rand_rwo][rand_col] == 'empty':
             matrix[rand_rwo][rand_col] = 'grass'
             index_grass = [rand_rwo, rand_col]
-            list_of_grass.append(index_grass)
+            list_of_grass.append(tuple(index_grass))
             num_grass += 1
-    return tuple(list_of_grass)
+    return list_of_grass
