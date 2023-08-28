@@ -1,5 +1,7 @@
 import pygame
-pygame.init()# Define some colors
+import os
+
+pygame.init()  # Define some colors
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 GREEN = (69, 139, 0)
@@ -83,3 +85,6 @@ while not done:
 # Be IDLE friendly. If you forget this line, the program will 'hang'
 # on exit.
 pygame.quit()
+
+flag_image = pygame.image.load(os.path.join('bin', 'flag.png'))
+screen.blit(flag_image, (1042, 492))
