@@ -88,3 +88,4 @@ pygame.quit()
 
 flag_image = pygame.image.load(os.path.join('bin', 'flag.png'))
 screen.blit(flag_image, (1042, 492))
+
