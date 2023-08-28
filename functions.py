@@ -1,3 +1,6 @@
+import consts
+import random
+
 def creating_matrix():
     matrix = []
     for hours in range(25):
@@ -15,13 +18,15 @@ def add_flag(matrix):
     return matrix
 
 
-
 def add_grass(matrix):
+    num_grass = 0
     list_of_grass = []
-    for row in matrix:
-        for col in row:
-            if col == 'empty':
-                col = 'grass'
-                index_grass = [matrix[row], col]
-                list_of_grass.append(index_grass)
+    while num_grass < consts.NUM_BOMBS:
+        rand_rwo = random.randint(0, consts.ROW_NUM - 1)
+        rand_col = random.randint(0, consts.COL_NUM - 3)
+        if matrix[rand_rwo][rand_col] == 'empty':
+            matrix[rand_rwo][rand_col] = 'grass'
+            index_grass = [rand_rwo, rand_col]
+            list_of_grass.append(index_grass)
+            num_grass += 1
     return tuple(list_of_grass)
