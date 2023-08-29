@@ -53,7 +53,8 @@ while not done:
 
         try_screen.add_grass(cord_grass)
         try_screen.add_flag1()
-        soldier_coordinates = try_screen.add_soldier()
+        coordinates = try_screen.soldier_in_beginning()
+        # try_screen.move_soldier(coordinates)
         # # Draw the grid
         # for row in range(25):
         #     for column in range(50):
@@ -84,8 +85,7 @@ pygame.quit()
 # matrix = add_flag(matrix)
 # for row in matrix:
 #     print(row)
-for i in range(4):
-    move_to = keyboard_arrows.moves(soldier_coordinates)
+
 
 
 

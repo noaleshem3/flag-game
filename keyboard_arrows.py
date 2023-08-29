@@ -8,18 +8,20 @@ def moves(coordinates):
     stay = True
     while stay:
         for i in pygame.event.get():
-            if i.type == pygame.QUIT or i.type == pygame.K_RETURN:
+            if i.type == pygame.QUIT:
                 pygame.quit()
                 exit()
             elif i.type == pygame.KEYDOWN:
                 if i.key == pygame.K_LEFT:
-                    x -= 21
-                if i.key == pygame.K_RIGHT:
-                    x += 21
-                if i.key == pygame.K_UP:
-                    y -= 21
-                if i.key == pygame.K_DOWN:
-                    y += 21
-                if i.type == pygame.K_RETURN:
+                    x -= 20
+                elif i.key == pygame.K_RIGHT:
+                    x += 20
+                elif i.key == pygame.K_UP:
+                    y -= 20
+                elif i.key == pygame.K_DOWN:
+                    y += 20
+                elif i.type == pygame.K_RETURN:
                     pygame.quit()
                     exit()
+
+    return (x, y)

@@ -2,6 +2,8 @@ import pygame
 import consts
 import os
 
+import keyboard_arrows
+
 pygame.init()  # Define some colors
 
 grid = []
@@ -36,9 +38,34 @@ def add_grass(list_cord):
         screen.blit(grass, i)
 
 
-def add_soldier():
+def soldier_in_beginning():
     soldier_image = pygame.image.load(os.path.join('bin', 'soldier.png'))
     soldier = pygame.transform.scale(soldier_image, (83, 41))
     screen.blit(soldier, (20, 20))
-    soldier_coordinates = (20, 20)
-    return soldier_coordinates
+    return (20, 20)
+
+
+def move_soldier(coordinates):
+    while True:
+        screen.fill(consts.GREEN)
+        soldier_image = pygame.image.load(os.path.join('bin', 'soldier.png'))
+        soldier = pygame.transform.scale(soldier_image, (83, 41))
+        screen.blit(soldier)
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                exit()
+
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RIGHT:
+                    x += 20
+                if event.key == pygame.K_LEFT:
+                    x -= 20
+                if event.key == K_UP:
+                    y = y - 5
+                if event.key == K_DOWN:
+                    y = y + 5
+                pygame.display.update()
+    # soldier_image = pygame.image.load(os.path.join('bin', 'soldier.png'))
+    # soldier = pygame.transform.scale(soldier_image, (83, 41))
+    # coordinates = keyboard_arrows.moves(coordinates)
+    # screen.blit(soldier, coordinates)
