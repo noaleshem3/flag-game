@@ -35,6 +35,7 @@ def add_grass(list_cord):
         grass = pygame.transform.scale(grass_image, (41, 41))
         screen.blit(grass, (i[0], i[1]))
 
+
 while not done:
     for event in pygame.event.get():  # User did something
         if event.type == pygame.QUIT:  # If user clicked close
@@ -49,7 +50,7 @@ while not done:
             grid[row][column] = "x"
             print("Click ", pos, "Grid coordinates: ", row, column)
 
-    # Set the screen background
+        # Set the screen background
         screen.fill(consts.GREEN)
         # drew_bombs(screen)
         add_flag1()
@@ -64,12 +65,11 @@ while not done:
                 pygame.draw.rect(screen,
                                  color,
                                  [(
-                                              consts.MARGIN + consts.WIDTH) * column + consts.MARGIN,
+                                          consts.MARGIN + consts.WIDTH) * column + consts.MARGIN,
                                   (
-                                              consts.MARGIN + consts.HEIGHT) * row + consts.MARGIN,
+                                          consts.MARGIN + consts.HEIGHT) * row + consts.MARGIN,
                                   consts.WIDTH,
                                   consts.HEIGHT])
-
 
     # Limit to 60 frames per second
     clock.tick(60)
