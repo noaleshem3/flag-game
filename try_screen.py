@@ -29,6 +29,11 @@ def add_flag1():
     screen.blit(flag, (968, 464))
 
 
+def add_grass(list_cord):
+    for i in list_cord:
+        grass_image = pygame.image.load(os.path.join('bin', 'grass.png'))
+        grass = pygame.transform.scale(grass_image, (41, 41))
+        screen.blit(grass, (i[0], i[1]))
 
 while not done:
     for event in pygame.event.get():  # User did something
