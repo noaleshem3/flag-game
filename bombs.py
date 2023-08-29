@@ -35,10 +35,9 @@ def rand_bombs(matrix):
     return list_bombs_index, matrix
 
 
-screen = pygame.display.set_mode(consts.WINDOW_SIZE)
-
-
-def night(cord_bombs):
+def night(cord_bombs, screen):
+    #screen = pygame.display.set_mode(consts.WINDOW_SIZE)
+    screen.fill(consts.GREEN)
     for row in range(25):
         for column in range(50):
             color = consts.BLACK
@@ -50,7 +49,10 @@ def night(cord_bombs):
                                       consts.MARGIN + consts.HEIGHT) * row + consts.MARGIN,
                               consts.WIDTH,
                               consts.HEIGHT])
+    x = cord_bombs
     for bomb_cor in cord_bombs:
         bomb_image = pygame.image.load(os.path.join('bin', 'mine.png'))
-        bomb = pygame.transform.scale(bomb_image, (62, 20))
-        screen.blit(bomb, (bomb_cor[0], bomb_cor[1]))
+        bomb = pygame.transform.scale(bomb_image, (60, 20))
+        screen.blit(bomb, (bomb_cor[1], bomb_cor[0]))
+    
+

@@ -54,6 +54,7 @@ while not done:
         try_screen.add_grass(cord_grass)
         try_screen.add_flag1()
         coordinates = try_screen.soldier_in_beginning()
+        bombs.night(cord_bombs, screen)
         # try_screen.move_soldier(coordinates)
         # # Draw the grid
         # for row in range(25):
@@ -79,6 +80,7 @@ while not done:
 
 # Be IDLE friendly. If you forget this line, the program will 'hang'
 # on exit.
+
 pygame.quit()
 
 # matrix = creating_matrix()
