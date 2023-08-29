@@ -1,6 +1,6 @@
 import consts
 import random
-
+import bombs
 HEIGHT_GRASS = 1
 WIDTH_GRASS = 2
 
@@ -39,15 +39,14 @@ def add_grass(matrix):
     num_grass = 0
     list_of_grass = []
     while num_grass < 20:
-        rand_rwo = random.randint(0, consts.ROW_NUM - 3)
+        rand_row = random.randint(0, consts.ROW_NUM - 3)
         rand_col = random.randint(0, consts.COL_NUM - 2)
-        if matrix[rand_rwo][rand_col] == 'empty' and matrix[rand_rwo][rand_col + 1] == 'enpty':
-            matrix[rand_rwo][rand_col] = 'grass'
-            index_grass = [rand_rwo, rand_col]
-            list_of_grass.append(tuple(index_grass))
+        if matrix[rand_row][rand_col] == 'empty' and matrix[rand_row][rand_col + 1] == 'empty':
+            index = [rand_row, rand_col]
+            list_of_grass.append(tuple(index))
+            matrix[rand_row][rand_col] = 'grass'
+            matrix[rand_row][rand_col + 1] = 'grass'
             num_grass += 1
     trans_index_to_cordinata(list_of_grass)
-    return list_of_grass
+    return matrix, list_of_grass
 
-
-creating_matrix()
