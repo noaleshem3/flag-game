@@ -47,7 +47,10 @@ def add_grass(matrix):
             matrix[rand_row][rand_col] = 'grass'
             matrix[rand_row][rand_col + 1] = 'grass'
             num_grass += 1
+    for row in matrix:
+        for col in row:
+            print(col, end=' ')
+        print()
     trans_index_to_cordinata(list_of_grass)
-    x = len(list_of_grass)
     return matrix, list_of_grass
 

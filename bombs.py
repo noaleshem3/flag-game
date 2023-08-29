@@ -29,9 +29,5 @@ def rand_bombs(matrix):
     list_bombs_index = list_bombs_index
     # matrix, index_grass = functions.add_grass(matrix)
     # print matrix
-    for row in matrix:
-        for col in row:
-            print(col, end=' ')
-        print()
 
     return list_bombs_index, matrix

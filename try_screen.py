@@ -1,6 +1,7 @@
 import pygame
 import consts
 import os
+
 pygame.init()  # Define some colors
 
 grid = []
@@ -29,10 +30,15 @@ def add_flag1():
 
 
 def add_grass(list_cord):
-
     for i in list_cord:
         grass_image = pygame.image.load(os.path.join('bin', 'grass.png'))
         grass = pygame.transform.scale(grass_image, (41, 41))
         screen.blit(grass, i)
 
 
+def add_soldier():
+    soldier_image = pygame.image.load(os.path.join('bin', 'soldier.png'))
+    soldier = pygame.transform.scale(soldier_image, (83, 41))
+    screen.blit(soldier, (20, 20))
+    soldier_coordinates = (20, 20)
+    return soldier_coordinates

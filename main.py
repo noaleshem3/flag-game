@@ -3,8 +3,7 @@ import bombs
 import try_screen
 import pygame
 import consts
-import os
-
+import keyboard_arrows
 # create matrix
 matrix = functions.creating_matrix()
 # get index of grass location, add grass to matrix
@@ -51,8 +50,10 @@ while not done:
         # Set the screen background
         screen.fill(consts.GREEN)
         # drew_bombs(screen)
-        try_screen.add_flag1()
+
         try_screen.add_grass(cord_grass)
+        try_screen.add_flag1()
+        soldier_coordinates = try_screen.add_soldier()
         # # Draw the grid
         # for row in range(25):
         #     for column in range(50):
@@ -83,6 +84,8 @@ pygame.quit()
 # matrix = add_flag(matrix)
 # for row in matrix:
 #     print(row)
+for i in range(4):
+    move_to = keyboard_arrows.moves(soldier_coordinates)
 
 
 
