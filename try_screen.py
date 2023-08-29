@@ -42,7 +42,7 @@ def soldier_in_beginning():
     soldier_image = pygame.image.load(os.path.join('bin', 'soldier.png'))
     soldier = pygame.transform.scale(soldier_image, (83, 41))
     screen.blit(soldier, (20, 20))
-    return (20, 20)
+    
 
 
 def move_soldier(coordinates):
