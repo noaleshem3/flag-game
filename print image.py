@@ -1,7 +1,7 @@
 import pygame
 import consts
 
-arrow = pygame.image.load('flag.png')
+arrow = pygame.image.load('bin/flag.png')
 sized_arrow = pygame.transform.scale(arrow, (
     consts.WIDTH, consts.HEIGHT))
 

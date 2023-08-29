@@ -1,6 +1,9 @@
 import consts
 import random
 
+HEIGHT_GRASS = 1
+WIDTH_GRASS = 2
+
 
 def trans_index_to_cordinata(list_of_index):
     list_of_cord = []
@@ -34,10 +37,10 @@ def add_flag(matrix):
 def add_grass(matrix):
     num_grass = 0
     list_of_grass = []
-    while num_grass < consts.NUM_BOMBS:
-        rand_rwo = random.randint(0, consts.ROW_NUM - 1)
-        rand_col = random.randint(0, consts.COL_NUM - 3)
-        if matrix[rand_rwo][rand_col] == 'empty':
+    while num_grass < 20:
+        rand_rwo = random.randint(0, consts.ROW_NUM - 3)
+        rand_col = random.randint(0, consts.COL_NUM - 2)
+        if matrix[rand_rwo][rand_col] == 'empty' and matrix[rand_rwo][rand_col + 1] == 'enpty':
             matrix[rand_rwo][rand_col] = 'grass'
             index_grass = [rand_rwo, rand_col]
             list_of_grass.append(tuple(index_grass))

@@ -50,20 +50,20 @@ while not done:
         add_flag1()
 
         # Draw the grid
-        # for row in range(25):
-        #     for column in range(50):
-        #         if grid[row][column] == "x":
-        #             color = consts.WHITE
-        #         else:
-        #             color = consts.BLACK
-        #         pygame.draw.rect(screen,
-        #                          color,
-        #                          [(
-        #                                       consts.MARGIN + consts.WIDTH) * column + consts.MARGIN,
-        #                           (
-        #                                       consts.MARGIN + consts.HEIGHT) * row + consts.MARGIN,
-        #                           consts.WIDTH,
-        #                           consts.HEIGHT])
+        for row in range(25):
+            for column in range(50):
+                if grid[row][column] == "x":
+                    color = consts.WHITE
+                else:
+                    color = consts.BLACK
+                pygame.draw.rect(screen,
+                                 color,
+                                 [(
+                                              consts.MARGIN + consts.WIDTH) * column + consts.MARGIN,
+                                  (
+                                              consts.MARGIN + consts.HEIGHT) * row + consts.MARGIN,
+                                  consts.WIDTH,
+                                  consts.HEIGHT])
 
 
     # Limit to 60 frames per second

@@ -32,6 +32,7 @@ def rand_bombs():
         for col in row:
             print(col, end=' ')
         print()
+    return list_bombs_index
 
 
 rand_bombs()
