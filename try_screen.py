@@ -45,27 +45,30 @@ def soldier_in_beginning():
 
 
 
-def move_soldier(coordinates):
-    while True:
-        screen.fill(consts.GREEN)
-        soldier_image = pygame.image.load(os.path.join('bin', 'soldier.png'))
-        soldier = pygame.transform.scale(soldier_image, (83, 41))
-        screen.blit(soldier)
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                exit()
-
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_RIGHT:
-                    x += 20
-                if event.key == pygame.K_LEFT:
-                    x -= 20
-                if event.key == K_UP:
-                    y = y - 5
-                if event.key == K_DOWN:
-                    y = y + 5
-                pygame.display.update()
+# def move_soldier(coordinates):
+#     while True:
+#         screen.fill(consts.GREEN)
+#         soldier_image = pygame.image.load(os.path.join('bin', 'soldier.png'))
+#         soldier = pygame.transform.scale(soldier_image, (83, 41))
+#         screen.blit(soldier)
+#         for event in pygame.event.get():
+#             if event.type == pygame.QUIT:
+#                 exit()
+#
+#             if event.type == pygame.KEYDOWN:
+#                 if event.key == pygame.K_RIGHT:
+#                     x += 20
+#                 if event.key == pygame.K_LEFT:
+#                     x -= 20
+#                 if event.key == K_UP:
+#                     y = y - 5
+#                 if event.key == K_DOWN:
+#                     y = y + 5
+#                 pygame.display.update()
     # soldier_image = pygame.image.load(os.path.join('bin', 'soldier.png'))
     # soldier = pygame.transform.scale(soldier_image, (83, 41))
     # coordinates = keyboard_arrows.moves(coordinates)
     # screen.blit(soldier, coordinates)
+
+
+

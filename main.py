@@ -45,7 +45,7 @@ while not done:
             row = pos[1] // (consts.HEIGHT + consts.MARGIN)
             # Set that location to one
             grid[row][column] = "x"
-            # print("Click ", pos, "Grid coordinates: ", row, column)
+            print("Click ", pos, "Grid coordinates: ", row, column)
 
         # Set the screen background
         screen.fill(consts.GREEN)
@@ -54,7 +54,6 @@ while not done:
         try_screen.add_grass(cord_grass)
         try_screen.add_flag1()
         coordinates = try_screen.soldier_in_beginning()
-        bombs.night(cord_bombs)
         # try_screen.move_soldier(coordinates)
         # # Draw the grid
         # for row in range(25):
