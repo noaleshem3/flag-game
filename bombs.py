@@ -1,6 +1,8 @@
 import random
 import consts
 import functions
+import pygame
+import os
 
 
 def rand_bombs(matrix):
@@ -31,3 +33,24 @@ def rand_bombs(matrix):
     # print matrix
 
     return list_bombs_index, matrix
+
+
+screen = pygame.display.set_mode(consts.WINDOW_SIZE)
+
+
+def night(cord_bombs):
+    for row in range(25):
+        for column in range(50):
+            color = consts.BLACK
+            pygame.draw.rect(screen,
+                             color,
+                             [(
+                                      consts.MARGIN + consts.WIDTH) * column + consts.MARGIN,
+                              (
+                                      consts.MARGIN + consts.HEIGHT) * row + consts.MARGIN,
+                              consts.WIDTH,
+                              consts.HEIGHT])
+    for bomb_cor in cord_bombs:
+        bomb_image = pygame.image.load(os.path.join('bin', 'mine.png'))
+        bomb = pygame.transform.scale(bomb_image, (62, 20))
+        screen.blit(bomb, (bomb_cor[0], bomb_cor[1]))
